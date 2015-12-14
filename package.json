@@ -1,0 +1,25 @@
+{
+  "name": "autopair",
+  "version": "1.0.0",
+  "description": "Final Project for Makers Academy",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cucumber": "^0.9.2",
+    "protractor": "^3.0.0",
+    "protractor-cucumber-framework": "^0.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeathRay1977/Auto-pair.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeathRay1977/Auto-pair/issues"
+  },
+  "homepage": "https://github.com/DeathRay1977/Auto-pair#readme"
+}
