@@ -1,2 +1,7 @@
 asset 'angular'
 asset 'bootstrap-sass-official'
+asset 'bootstrap'
+asset 'angular-resource'
+asset 'angular-mocks'
+asset 'angular-route'
+asset 'jquery'

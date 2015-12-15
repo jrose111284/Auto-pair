@@ -1,14 +1,7 @@
-<div class="container-fluid">
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <h1 ng-if="name">Hello, {{name}}</h1>
-    </div>
-    <div class="panel-body">
-      <form class="form-inline">
-        <div class="form-group">
-          <input class="form-control" type="text" placeholder="Enter your name" autofocus ng-model="name">
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+  <%= javascript_include_tag "angular.js" %>
+  <%= javascript_include_tag "controllers.js" %>
+  <%= javascript_include_tag "angular-resource.js" %>
+  <%= javascript_include_tag "angular-route.js" %>
+  <%= javascript_include_tag "autopairApp.js" %>
+<h1>Hello world tadam</h1>
+<div ng-view></div>
