@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require angular/angular
 //= require_tree .
+//= spec/karma/application_spec.js
+//= require application
+//= require angular-mocks

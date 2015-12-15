@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.5)
       actionpack (= 4.2.5)
@@ -57,6 +58,12 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    jasmine-core (2.4.1)
+    jasmine-rails (0.12.2)
+      jasmine-core (>= 1.3, < 3.0)
+      phantomjs (>= 1.9)
+      railties (>= 3.2.0)
+      sprockets-rails
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -76,6 +83,7 @@ GEM
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
+    phantomjs (1.9.8.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -90,6 +98,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.5)
       sprockets-rails
+    rails-assets-angular (1.4.8)
+    rails-assets-angular-mocks (1.4.8)
+      rails-assets-angular (= 1.4.8)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -161,10 +172,13 @@ DEPENDENCIES
   bower-rails
   byebug
   coffee-rails (~> 4.1.0)
+  jasmine-rails
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.15)
   rails (= 4.2.5)
+  rails-assets-angular
+  rails-assets-angular-mocks
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
