@@ -1,10 +1,10 @@
-var autopairApp = angular.module('autopairApp', ['ngRoute', 'autopairControllers']);
+var autopairApp = angular.module('autopairApp', ['ngRoute', 'templates', 'autopairControllers']);
 
 autopairApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/questions/new', {
-        templateUrl: 'templates/questions/new.html',
+      when('/questions', {
+        templateUrl: 'questions.html',
         controller: 'questionsController'
       }).
       otherwise({

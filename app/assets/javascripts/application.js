@@ -12,10 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require angular/angular
+//= require angular
 //= require angular-rails-templates
-//= require angular-resource/angular-resource
-//= require angular-mocks/angular-mocks
-//= require angular-route/angular-route
-// Templates in app/assets/javascript/templates
+//= require angular-route
+//= require autopairApp
+//= require controllers
 //= require_tree ./templates
