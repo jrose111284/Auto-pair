@@ -4,6 +4,7 @@ describe('Auto-Pair index page has title', function() {
 
     expect(browser.getTitle()).toEqual('Auto-Pair');
   });
+  
 });
 
 
