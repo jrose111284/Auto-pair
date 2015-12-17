@@ -7,8 +7,37 @@
   <%= javascript_include_tag 'application' %>
 </head>
 <body>
+<header>
+	<nav class="navbar navbar-default" role="navigation" bs-navbar>
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">AutoPair</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li data-match-route="/questions"><a href="#questions">View Questions</a></li>
+			<li data-match-route="/add-test"><a href="#add-test">Add Test</a></li>
+			<li data-match-route="/multiple-choice"><a href="#multiple-choice">Multiple Choice</a></li>
+			<li data-match-route="/programming"><a href="#programming">Programming</a></li>
+		</ul>
+	</nav>
+</header>
 
-  <div class="container" ng-view></div>
+<section class="view-container">
+	<div ng-view class="view-frame animate-view"></div>
+</section>
 
+<footer>
+	<div class="img-ronin">
+		<a href="http://ronin.makersacademy.com/"><img src="http://www.studentfunder.com/wp-content/uploads/2014/06/Makers-Academy-Logo.png"></a>
+	</div>
+	<div class="credits">
+		<p>
+			Built by <a href ="https://github.com/DeathRay1977" target="_blank" class="ronin">Norm Fasey</a>, <a href ="https://github.com/jrose111284" target="_blank" class="ronin">Jay Rose</a>, <a href ="https://github.com/d9nny" target="_blank" class="ronin">Dan Wheeler</a> and <a href ="https://github.com/yevdyko" target="_blank" class="ronin">Yev Dyko</a>.
+			<br>
+			We built this website as our Final Project at <a href="http://ronin.makersacademy.com" target="_blank" class="ronin">Ronin Makers Academy</a>.
+			<br>
+			This page uses <a href="https://www.angularjs.org/" target="_blank" class="ronin">Angular JS</a>, <a href="https://www.javascript.com/" target="_blank" class="ronin">Javascript</a>, <a href="http://www.w3.org/html/" target="_blank" class="ronin">HTML</a>, <a href="http://www.w3.org/Style/CSS/Overview.en.html" target="_blank" class="ronin">CSS</a>, <a href="http://www.tescolabs.com/" target="_blank" class="ronin">Tesco Labs API</a> and <a href="http://www.bittylicious.com/" target="_blank" class="ronin">Bittylicious API</a>.
+		</p>
+	</div>
+</footer
 </body>
 </html>
