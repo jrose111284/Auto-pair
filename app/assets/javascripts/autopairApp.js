@@ -1,4 +1,4 @@
-var autopairApp = angular.module('autopairApp', ['ngRoute', 'templates', 'autopairControllers']);
+var autopairApp = angular.module('autopairApp', ['ngRoute', 'templates', 'ngResource', 'autopairControllers']);
 
 autopairApp.config(['$routeProvider',
   function($routeProvider) {
@@ -22,6 +22,10 @@ autopairApp.config(['$routeProvider',
       when('/add-test', {
         templateUrl: 'addTest.html',
         controller: 'AddTestController'
+      }).
+      when('/applicants', {
+        templateUrl: 'viewApplicants.html',
+        controller: 'ApplicantsController'
       }).
       otherwise({
         redirectTo: '/'

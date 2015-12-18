@@ -83,3 +83,17 @@ describe('programming template', function() {
     expect(indexClass.isPresent()).toBe(true);
   });
 });
+
+describe('applicant template', function() {
+  it('link to applicants works', function() {
+    browser.get('http://localhost:3000/');
+    element(by.linkText('Applicants')).click();
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/#/applicants');
+  });
+  it('has the div with class applicants', function() {
+    browser.get('http://localhost:3000/');
+    element(by.linkText('Applicants')).click();
+    var indexClass = element(by.css('.applicant'));
+    expect(indexClass.isPresent()).toBe(true);
+  });
+});
