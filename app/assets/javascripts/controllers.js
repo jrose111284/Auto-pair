@@ -40,7 +40,7 @@ autopairControllers.controller('ApplicantController', ['$resource', function($re
  //    }
  //  ];
 
-  self.applicants = return $resource("app/assets/controllers/applicants_controller/applicants/:id", { id: "@id" },
+  self.applicants = return $resource("api/applicants/:id", { id: "@id" },
     {
       'create':  { method: 'POST' },
       'index':   { method: 'GET', isArray: true },
