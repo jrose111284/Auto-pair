@@ -1,11 +1,19 @@
 <section class='applicant' ng-controller="ApplicantController as appCtrl">
 	<div class='results'>
 		<div class='container'>
-			<div id="id" ng-repeat="id in ids" class="col-md-2">ID</div>
-			<div id="name" ng-repeat="name in names" class="col-md-4">Name</div>
-			<div id="email" ng-repeat="email in emails" class="col-md-4">Email</div>
-			<div id="test_id" ng-repeat="test_id in test_ids" class="col-md-1">Test ID</div>
-			<div id="score" ng-repeat="score in scores" class="col-md-1">Score</div>
+				<div id="id" class="col-md-2">ID</div>
+				<div id="name" class="col-md-4">Name</div>
+				<div id="email" class="col-md-4">Email</div>
+				<div id="test_id" class="col-md-1">Test ID</div>
+				<div id="score" class="col-md-1">Score</div>
+			
+			<ul ng-repeat="applicant in appCtrl.applicants">
+				<div id="id" class="col-md-2">{{applicant.id}}</div>
+				<div id="name" class="col-md-4">{{applicant.name}}</div>
+				<div id="email" class="col-md-4">{{applicant.email}}</div>
+				<div id="test_id" class="col-md-1">{{applicant.test_id}}</div>
+				<div id="score" class="col-md-1">{{applicant.score}}</div>
+			</ul>
 		</div>
 	</div>
 </section>
