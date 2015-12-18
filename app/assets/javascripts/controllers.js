@@ -4,10 +4,14 @@ autopairControllers.controller('questionsController', [ function() {
 
 }]);
 
-autopairControllers.controller('indexController', [function() {
-
+autopairControllers.controller('indexController', ['$http', function($http) {
+  var self = this;
+  $http.get("http://localhost:3000/applicants")
+  .then(function (response) {
+    self.applicants = response.data.applicants;
+  });
 }]);
-
+ condole.log(self.applicants);
 autopairControllers.controller('MultipleChoiceController', [function() {
 
 }]);
@@ -20,36 +24,10 @@ autopairControllers.controller('AddTestController', [function() {
 
 }]);
 
-autopairControllers.controller('ApplicantController', ['$resource', function($resource) {
-	var self = this;
+autopairControllers.controller('ApplicantController', [ function() {
 
-	// self.applicants = [
- //    {
- //    	"id": "1",
- //      "name": "tansaku",
- //      "email": "https://avatars.githubusercontent.com/u/30216?v=3",
- //      "test_id": 1,
- //      "score": 2
- //    }, 
- //    {
- //    	"id": 2,
- //      "name": "tim",
- //      "email": "one@one.com",
- //      "test_id": 5,
- //      "score": 3
- //    }
- //  ];
+}]);
 
-  self.applicants = return $resource("api/applicants/:id", { id: "@id" },
-    {
-      'create':  { method: 'POST' },
-      'index':   { method: 'GET', isArray: true },
-      'show':    { method: 'GET', isArray: false },
-      'update':  { method: 'PUT' },
-      'destroy': { method: 'DELETE' }
-    }
-  );
- condole.log(self.applicants);
 
 
 
