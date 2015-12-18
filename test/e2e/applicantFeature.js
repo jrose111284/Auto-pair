@@ -12,5 +12,6 @@ describe('Auto-Pair applicant page', function() {
     var col4Class = element(by.css('.col-md-4'));
     expect(col4Class.isPresent()).toBe(true);
   });
-
 });
+
+
