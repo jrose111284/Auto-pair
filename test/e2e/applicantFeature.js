@@ -14,4 +14,10 @@ describe('Auto-Pair applicant page', function() {
   });
 });
 
-
+describe('applicants in table', function() {
+  it('has a list of applicant in table', function() {
+    browser.get('http://localhost:3000/#/applicants');
+    var nameText = element.all(by.repeater('name in name.list')).getText()
+    expect(nameTexts).toEqual(["dan", "jay"]);
+});
+// (name: "Dan", email:"dan@dan.com", test_id: 1, score: 3
