@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+
+gem 'active_model_serializers'
 gem 'sprockets', '2.12.3'
 gem 'angular-rails-templates'
 gem 'bower-rails'
