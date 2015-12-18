@@ -1,17 +1,14 @@
+'use strict';
 var autopairControllers = angular.module('autopairControllers', []);
 
 autopairControllers.controller('questionsController', [ function() {
 
 }]);
 
-autopairControllers.controller('indexController', ['$http', function($http) {
-  var self = this;
-  $http.get("http://localhost:3000/applicants")
-  .then(function (response) {
-    self.applicants = response.data.applicants;
-  });
+autopairControllers.controller('indexController', [function() {
+
 }]);
- condole.log(self.applicants);
+
 autopairControllers.controller('MultipleChoiceController', [function() {
 
 }]);
@@ -24,9 +21,46 @@ autopairControllers.controller('AddTestController', [function() {
 
 }]);
 
-autopairControllers.controller('ApplicantController', [ function() {
+autopairControllers.controller('ApplicantController', ['$http', function($http) {
+  var self = this;
+  self.path = 'http://localhost:3000/applicants';
+  self.applicant;
+
+  $http.get(self.path)
+	  .then( function (response) {
+	    self.applicants = response.data.applicants;
+	});
+
+	self.show = function () {
+		$http.get(self.path)
+		  .then(function (response) {
+		    self.applicants = response.data.applicants;
+		});
+	};
+
+	self.update = function (applicantId) {
+		$http.put()
+		  .then(function() {
+		    self.show();
+		});
+  };
+
+  self.delete = function (applicantId) {
+		$http.delete(self.path + '/' + applicantId)
+			.then(function() {
+		    self.show();
+		});
+  };
+
+  self.create = function () {
+	  $http.post()
+	  	.then(function() {
+		    self.show();
+		});
+  };
 
 }]);
+
 
 
 

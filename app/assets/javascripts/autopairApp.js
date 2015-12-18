@@ -27,6 +27,14 @@ autopairApp.config(['$routeProvider',
         templateUrl: 'viewApplicants.html',
         controller: 'ApplicantController'
       }).
+      when('/applicants/new', {
+        templateUrl: 'addApplicant.html',
+        controller: 'ApplicantController'
+      }).
+      when('/applicants/:id', {
+        templateUrl: 'applicantDetail.html',
+        controller: 'ApplicantController'
+      }).
       otherwise({
         redirectTo: '/'
       });

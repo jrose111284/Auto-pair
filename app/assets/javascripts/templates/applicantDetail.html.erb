@@ -1,0 +1,34 @@
+<section class='applicant-detail' ng-controller="ApplicantController as appCtrl">
+	<h1>Applicant Details</h1>
+	<div class="container">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+			<div class="controls">
+				{{appCtrl.applicant.name}}
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="email">Email</label>
+			<div class="controls">
+				{{appCtrl.applicant.email}}
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="test">Test ID</label>
+			<div class="controls">
+				{{appCtrl.applicant.test_id}}
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="score">Score</label>
+			<div class="controls">
+				{{appCtrl.applicant.score}}
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<a ng-click="appCtrl.delete(applicant.id)" ata-match-route="/applicants" href="#applicants" class="btn btn-small btn-danger">Delete</a>
+			</div>
+		</div>
+	</div>
+</section>

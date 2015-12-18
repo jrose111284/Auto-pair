@@ -9,7 +9,7 @@ class ApplicantsController < ApplicationController
     render json: @applicants
   end
 
-  # GET /applicantss/1
+  # GET /applicants/1
   def show
     render json: @applicant
   end
@@ -36,7 +36,7 @@ class ApplicantsController < ApplicationController
 
   # DELETE /applicantss/1
   def destroy
-    @applicants.destroy
+    @applicant.destroy
     head :no_content
   end
 
@@ -48,11 +48,8 @@ class ApplicantsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def applicant_params
-      params.require(:applicant).permit(:name, :email, :test_id, :score)
+      params.require(:applicant).permit(:id, :name, :email, :test_id, :score)
     end
 end
 
 
-
-
-end

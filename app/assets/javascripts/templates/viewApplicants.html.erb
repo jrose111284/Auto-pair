@@ -1,18 +1,27 @@
 <section class='applicant' ng-controller="ApplicantController as appCtrl">
+	<h1>Applicants</h1>
+
 	<div class='results'>
-		<div class='container'>
-				<div id="id" class="col-md-2">ID</div>
-				<div id="name" class="col-md-4">Name</div>
-				<div id="email" class="col-md-4">Email</div>
-				<div id="test_id" class="col-md-1">Test ID</div>
-				<div id="score" class="col-md-1">Score</div>
-			
-			<ul ng-repeat="applicant in appCtrl.applicants">
-				<div id="name" class="col-md-4">{{applicant.name}}</div>
-				<div id="email" class="col-md-4">{{applicant.email}}</div>
-				<div id="test_id" class="col-md-2">{{applicant.test_id}}</div>
-				<div id="score" class="col-md-2">{{applicant.score}}</div>
-			</ul>
+		<button data-match-route="/applicants/new"><a href="#applicants/new">Create Applicant</a></button
+		<div class="container">
+			<table class="table table-striped">
+				<thead><tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Test ID</th>
+					<th>Score</th>
+				</tr></thead>
+				<tbody><tr ng-repeat="applicant in appCtrl.applicants">
+					<td>{{ applicant.name }}</td>
+					<td>{{ applicant.email }}</td>
+					<td>{{ applicant.test_id }}</td>
+					<td>{{ applicant.score }}</td>
+					<td><a ng-click="appCtrl.update(applicant)" data-match-route="/applicants/{{applicant.id}}" href="#applicants/{{applicant.id}}" class="btn btn-small btn-primary">Edit</a></td>
+					<td><a ng-click="appCtrl.delete(applicant.id)" data-match-route="/applicants}}" href="#applicants" class="btn btn-small btn-danger">Delete</a></td>
+				</tr></tbody>
+			</table>
 		</div>
 	</div>
 </section>
+
+
