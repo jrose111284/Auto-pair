@@ -24,7 +24,6 @@ autopairControllers.controller('AddTestController', [function() {
 autopairControllers.controller('ApplicantController', ['$http', function($http) {
   var self = this;
   self.path = 'http://localhost:3000/applicants';
-  self.applicant;
 
   $http.get(self.path)
 	  .then( function (response) {
@@ -38,8 +37,21 @@ autopairControllers.controller('ApplicantController', ['$http', function($http) 
 		});
 	};
 
-	self.update = function (applicantId) {
-		$http.put()
+	self.create = function () {
+		var data = {
+			name: self.name,
+			email: self.email
+		};
+		console.log(data);
+	  $http.post(self.path, data)
+	  	.then(function() {
+	  		console.log(data);
+		    self.show();
+		});
+  };
+
+	self.update = function (data) {
+		$http.put(data)
 		  .then(function() {
 		    self.show();
 		});
@@ -51,14 +63,6 @@ autopairControllers.controller('ApplicantController', ['$http', function($http) 
 		    self.show();
 		});
   };
-
-  self.create = function () {
-	  $http.post()
-	  	.then(function() {
-		    self.show();
-		});
-  };
-
 }]);
 
 
