@@ -21,7 +21,7 @@ autopairControllers.controller('AddTestController', [function() {
 
 }]);
 
-autopairControllers.controller('ApplicantController', ['$http', function($http) {
+autopairControllers.controller('ApplicantController', ['$http', '$location', function($http, $location) {
   var self = this;
   self.path = 'http://localhost:3000/applicants';
 
@@ -47,6 +47,7 @@ autopairControllers.controller('ApplicantController', ['$http', function($http) 
 	  	.then(function() {
 	  		console.log(data);
 		    self.show();
+		    $location.path('/applicants');
 		});
   };
 

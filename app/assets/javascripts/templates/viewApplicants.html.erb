@@ -16,8 +16,8 @@
 					<td>{{ applicant.email }}</td>
 					<td>{{ applicant.test_id }}</td>
 					<td>{{ applicant.score }}</td>
-					<a ng-click="appCtrl.update(applicant)" data-match-route="/applicants/{{applicant.id}}" href="#applicants/{{applicant.id}}" class="btn btn-small btn-primary">Edit</a>
-					<a ng-click="appCtrl.delete(applicant.id)" data-match-route="/applicants}}" href="#applicants" class="btn btn-small btn-danger">Delete</a>
+					<td><a ng-click="appCtrl.update(applicant)" data-match-route="/applicants/{{applicant.id}}" href="#applicants/{{applicant.id}}" class="btn btn-small btn-primary">Edit</a></td>
+					<td><a ng-click="appCtrl.delete(applicant.id)" data-match-route="/applicants}}" href="#applicants" class="btn btn-small btn-danger">Delete</a></td>
 				</tr></tbody>
 			</table>
 		</div>
