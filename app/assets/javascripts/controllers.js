@@ -95,8 +95,57 @@ autopairControllers.controller('TestController', ['$http', '$location', function
   };
 }]);
 
-autopairControllers.controller('QuestionController', [ function() {
+autopairControllers.controller('QuestionController', ['$http', '$location', function($http, $location) {
+	var self = this;
+  self.path = 'http://localhost:3000/questions';
 
+  $http.get(self.path)
+	  .then( function (response) {
+	    self.questions = response.data.questions;
+	    console.log(self.question);
+	});
+
+	self.show = function () {
+		$http.get(self.path)
+		  .then(function (response) {
+		    self.questions = response.data.questions;
+		});
+	};
+
+	self.findQuestion = function (id) {
+		$http.get(self.path + '/' + id)
+		  .then(function (response) {
+		    self.question = response.data.question;
+		    console.log(self.question);
+		});
+	};
+
+	self.create = function () {
+		var data = {
+			questions_text: self.questions_text,
+			rspec_test: self.rspec_test
+		};
+	  $http.post(self.path, data)
+	  	.then(function() {
+		    self.show();
+		    $location.path('/questions');
+		});
+  };
+
+	self.update = function (data, id) {
+		$http.put(self.path + '/' + id, data)
+		  .then(function(response) {
+		    self.resultPut = response;
+		    $location.path('/questions');
+		});
+  };
+
+  self.delete = function (id) {
+		$http.delete(self.path + '/' + id)
+			.then(function() {
+		    self.show();
+		});
+  };
 }]);
 
 
