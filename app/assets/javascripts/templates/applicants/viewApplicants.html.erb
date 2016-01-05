@@ -38,11 +38,17 @@
             <td>{{ applicant.test_id }}</td>
             <td>{{ applicant.score }}</td>
             <td style="white-space: nowrap">
-              <form editable-form name="rowform" onaftersave="appCtrl.update($data, applicant.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == applicant">
+              <form editable-form name="rowform"
+                    onaftersave="appCtrl.update($data, applicant.id)"
+                    ng-show="rowform.$visible"
+                    class="form-buttons form-inline"
+                    shown="inserted == applicant">
                 <button type="submit" class="btn btn-primary">
                   Save
                 </button>
-                <button type="button" ng-click="appCtrl.rowform.$cancel()" class="btn btn-default">
+                <button type="button"
+                        ng-click="appCtrl.rowform.$cancel()"
+                        class="btn btn-default">
                   Cancel
                 </button>
               </form>
@@ -51,34 +57,7 @@
                 <button class="btn btn-danger" ng-click="appCtrl.delete(applicant.id)">Delete</button>
               </div>
             </td>
-            <!-- <div class="buttons" ng-show="!rowform.$visible">
-              <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
-              </div>
-              </td>
-
-              <td style="white-space: nowrap">
-              <!-- <!-- <!-- form -->
-              <!-- <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
-                <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
-                save
-                </button>
-                <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
-                cancel
-                </button>
-                </form>
-                <div class="buttons" ng-show="!rowform.$visible">
-                <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
-                <button class="btn btn-danger" ng-click="removeUser($index)">del</button>
-                </div>
-                </td> -->
-
-
-
-                <!--
-                  <td>
-                  <button class="btn btn-danger" ng-click="removeUser($index)">Delete</button>
-                  </td>
-                  </tr> -->
+          </tr>
         </tbody>
       </table>
     </div>
