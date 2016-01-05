@@ -42,7 +42,17 @@ autopairApp.config(['$routeProvider',
         controllerAs: 'testCtrl'
       })
       .when('/questions', {
-        templateUrl: 'questions.html',
+        templateUrl: 'questions/viewQuestion.html',
+        controller: 'QuestionController',
+        controllerAs: 'questionCtrl'
+      })
+      .when('/questions/new', {
+        templateUrl: 'questions/addQuestion.html',
+        controller: 'QuestionController',
+        controllerAs: 'questionCtrl'
+      })
+      .when('/questions/:id', {
+        templateUrl: 'questions/detailQuestion.html',
         controller: 'QuestionController',
         controllerAs: 'questionCtrl'
       })

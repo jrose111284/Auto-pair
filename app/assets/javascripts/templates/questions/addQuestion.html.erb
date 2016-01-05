@@ -1,0 +1,28 @@
+<section class='add-question'>
+    <div class="container">
+        <h1>Add Question</h1>
+
+         <form ng-submit="questionCtrl.create()">
+
+
+        <div class="form-group">
+          <input type="text"
+            class="form-control"
+            placeholder="Question Text"
+            ng-model="questionCtrl.question_text"></input>
+        </div>
+        <div class="form-group">
+          <textarea type="text"
+          class="form-control"
+          placeholder="RSPEC Test"
+          ng-model="questionCtrl.rspec_test"></textarea>
+        </div>
+                    <div class="control-group">
+                <div class="controls">
+                    <a ng-click="questionCtrl.cancel()" data-match-route="/questions" href="#questions" class="btn btn-small">Cancel</a>
+                    <input type="submit" id="submit" data-match-route="/questions" href="#questions" class="btn btn-small btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
