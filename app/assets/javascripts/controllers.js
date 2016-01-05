@@ -69,8 +69,8 @@ autopairControllers.controller('TestController', ['$http', '$location', function
 
 	self.create = function () {
 		var data = {
-			name: self.description,
-			email: self.pass_score
+			description: self.description,
+			pass_score: self.pass_score
 		};
 	  $http.post(self.path, data)
 	  	.then(function() {
@@ -84,6 +84,7 @@ autopairControllers.controller('TestController', ['$http', '$location', function
 		  .then(function(response) {
 		    self.resultPut = response;
 		    $location.path('/tests');
+
 		});
   };
 
@@ -147,25 +148,3 @@ autopairControllers.controller('QuestionController', ['$http', '$location', func
 		});
   };
 }]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

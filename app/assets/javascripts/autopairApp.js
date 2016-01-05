@@ -32,12 +32,12 @@ autopairApp.config(['$routeProvider',
         controllerAs: 'testCtrl'
       })
       .when('/tests/new', {
-        templateUrl: 'addTest.html',
+        templateUrl: 'tests/addTest.html',
         controller: 'TestController',
         controllerAs: 'testCtrl'
       })
       .when('/tests/:id', {
-        templateUrl: 'detailTest.html',
+        templateUrl: 'tests/detailTest.html',
         controller: 'TestController',
         controllerAs: 'testCtrl'
       })
