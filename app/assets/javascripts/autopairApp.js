@@ -1,4 +1,8 @@
-var autopairApp = angular.module('autopairApp', ['ngRoute', 'templates', 'autopairControllers']);
+var autopairApp = angular.module('autopairApp', ['ngRoute', 'templates', 'autopairControllers', 'xeditable']);
+
+autopairApp.run(function(editableOptions) {
+  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+});
 
 autopairApp.config(['$routeProvider',
   function($routeProvider) {
