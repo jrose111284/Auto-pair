@@ -16,6 +16,15 @@ ActiveRecord::Schema.define(version: 20160104164804) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "applicants", force: :cascade do |t|
+    t.text     "name"
+    t.text     "email"
+    t.integer  "test_id"
+    t.integer  "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string   "question_text"
     t.string   "rspec_test"

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :questions
   resources :tests
-root "home#index"
+  resources :applicants
+	root 'home#index'
 end

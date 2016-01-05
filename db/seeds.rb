@@ -10,3 +10,5 @@
                                {question_text: "Question 2", rspec_test: "rspec test 2"},
                                {question_text: "Question 3", rspec_test: "rspec test 3"},
                                {question_text: "Question 4", rspec_test: "rspec test 4"}])
+Applicant.create!(name: "Dan", email:"dan@dan.com", test_id: 1, score: 3)
+Applicant.create!(name: "Jay", email:"jay@jay.com", test_id: 1, score: 3)
