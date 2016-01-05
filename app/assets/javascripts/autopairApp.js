@@ -2,40 +2,43 @@ var autopairApp = angular.module('autopairApp', ['ngRoute', 'templates', 'ngReso
 
 autopairApp.config(['$routeProvider',
   function($routeProvider) {
-    $routeProvider.
-      when('/questions', {
-        templateUrl: 'questions.html',
-        controller: 'questionsController'
-      }).
-      when('/', {
+    $routeProvider
+      .when('/', {
         templateUrl: 'index.html',
-        controller: 'indexController'
-      }).
-      when('/programming', {
-        templateUrl: 'programming.html',
-        controller: 'ProgrammingController'
-      }).
-      when('/multiple-choice', {
-        templateUrl: 'multipleChoice.html',
-        controller: 'MultipleChoiceController'
-      }).
-      when('/add-test', {
+        controller: 'IndexController'
+      })
+      .when('/applicants', {
+        templateUrl: 'applicants/viewApplicants.html',
+        controller: 'ApplicantController',
+        controllerAs: 'appCtrl'
+      })
+      .when('/applicants/new', {
+        templateUrl: 'applicants/addApplicant.html',
+        controller: 'ApplicantController',
+        controllerAs: 'appCtrl'
+      })
+      .when('/applicants/:id', {
+        templateUrl: 'applicants/detailApplicant.html',
+        controller: 'ApplicantController',
+        controllerAs: 'appCtrl'
+      })
+      .when('/tests', {
+        templateUrl: 'viewTest.html',
+        controller: 'TestController'
+      })
+      .when('/tests/new', {
         templateUrl: 'addTest.html',
-        controller: 'AddTestController'
-      }).
-      when('/applicants', {
-        templateUrl: 'viewApplicants.html',
-        controller: 'ApplicantController'
-      }).
-      when('/applicants/new', {
-        templateUrl: 'addApplicant.html',
-        controller: 'ApplicantController'
-      }).
-      when('/applicants/:id', {
-        templateUrl: 'applicantDetail.html',
-        controller: 'ApplicantController'
-      }).
-      otherwise({
+        controller: 'TestController'
+      })
+      .when('/tests/:id', {
+        templateUrl: 'detailTest.html',
+        controller: 'TestController'
+      })
+      .when('/questions', {
+        templateUrl: 'questions.html',
+        controller: 'QuestionController'
+      })
+      .otherwise({
         redirectTo: '/'
       });
-  }]);
+}]);

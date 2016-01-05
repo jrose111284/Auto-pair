@@ -1,23 +1,7 @@
 'use strict';
 var autopairControllers = angular.module('autopairControllers', []);
 
-autopairControllers.controller('questionsController', [ function() {
-
-}]);
-
-autopairControllers.controller('indexController', [function() {
-
-}]);
-
-autopairControllers.controller('MultipleChoiceController', [function() {
-
-}]);
-
-autopairControllers.controller('ProgrammingController', [function() {
-
-}]);
-
-autopairControllers.controller('AddTestController', [function() {
+autopairControllers.controller('IndexController', [function() {
 
 }]);
 
@@ -51,10 +35,25 @@ autopairControllers.controller('ApplicantController', ['$http', '$location', fun
 		});
   };
 
-	self.update = function (data) {
-		$http.put(data)
-		  .then(function() {
-		    self.show();
+  self.chosenApplicant = function (applicant) {
+  	self.currentApplicant = applicant;
+  	console.log(applicant);
+  };
+
+
+	self.update = function (id) {
+		var data = {
+			name: self.name,
+			email: self.email
+		};
+		console.log(data);
+
+		$http.put("localhost:3000/#/applicants/{$scope.applicant.id}", data)
+		  .then(function(response) {
+		console.log(response);
+
+		    self.resultPut = response;
+		    $location.path('/applicants');
 		});
   };
 
@@ -64,6 +63,14 @@ autopairControllers.controller('ApplicantController', ['$http', '$location', fun
 		    self.show();
 		});
   };
+}]);
+
+autopairControllers.controller('TestController', [function() {
+
+}]);
+
+autopairControllers.controller('QuestionController', [ function() {
+
 }]);
 
 
