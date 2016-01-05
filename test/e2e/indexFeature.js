@@ -6,6 +6,17 @@ describe('Auto-Pair index page has title', function() {
 
     expect(browser.getTitle()).toEqual('Auto-Pair');
   });
+  
+});
+
+
+describe('Index page has a navbar', function() {
+	it('has an Add Test link', function() {
+		browser.get('http://localhost:3000');
+
+		expect(element(by.buttonText("Add Test")));
+		expect(element(by.css('[ng-click="setTabMenu(3)"]')));
+	});
 });
 
 describe('index template', function() {
@@ -69,6 +80,20 @@ describe('programming template', function() {
     browser.get('http://localhost:3000/');
     element(by.linkText('Programming')).click();
     var indexClass = element(by.css('.programming'));
+    expect(indexClass.isPresent()).toBe(true);
+  });
+});
+
+describe('applicant template', function() {
+  it('link to applicants works', function() {
+    browser.get('http://localhost:3000/');
+    element(by.linkText('Applicants')).click();
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/#/applicants');
+  });
+  it('has the div with class applicants', function() {
+    browser.get('http://localhost:3000/');
+    element(by.linkText('Applicants')).click();
+    var indexClass = element(by.css('.applicant'));
     expect(indexClass.isPresent()).toBe(true);
   });
 });

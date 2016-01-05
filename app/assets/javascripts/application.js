@@ -15,6 +15,8 @@
 //= require angular
 //= require angular-rails-templates
 //= require angular-route
+//= require angular-resource
+//= require angular-xeditable
 //= require autopairApp
 //= require controllers
 //= require_tree ./templates
