@@ -1,0 +1,41 @@
+<section class='test'>
+  <h1>Tests</h1>
+
+  <div class='results'>
+    <button data-match-route="/tests/new">
+      <a href="#tests/new">Create Test</a>
+    </button>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Pass Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="test in testCtrl.testts">
+            <td>{{ test.description }}</td>
+            <td>{{ testt.pass_score }}</td>
+            <td>
+              <a ng-click="testCtrl.update(test.id)"
+                 data-match-route="/tests/{{test.id}}"
+                 href="#tests/{{test.id}}"
+                 class="btn btn-small btn-primary">
+                Edit
+              </a>
+            </td>
+            <td>
+              <a ng-click="testCtrl.delete(test.id)"
+                 data-match-route="/tests}}"
+                 href="#tests"
+                 class="btn btn-small btn-danger">
+                Delete
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

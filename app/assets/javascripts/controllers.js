@@ -12,12 +12,14 @@ autopairControllers.controller('ApplicantController', ['$http', '$location', fun
   $http.get(self.path)
 	  .then( function (response) {
 	    self.applicants = response.data.applicants;
+	    console.log(self.applicants);
 	});
 
 	self.show = function () {
 		$http.get(self.path)
 		  .then(function (response) {
 		    self.applicants = response.data.applicants;
+
 		});
 	};
 
@@ -26,61 +28,76 @@ autopairControllers.controller('ApplicantController', ['$http', '$location', fun
 			name: self.name,
 			email: self.email
 		};
-		console.log(data);
 	  $http.post(self.path, data)
 	  	.then(function() {
-	  		console.log(data);
 		    self.show();
 		    $location.path('/applicants');
 		});
   };
 
-  self.chosenApplicant = function (applicant) {
-  	self.currentApplicant = applicant;
-  	console.log(applicant);
-  };
-
-
-	self.update = function (id) {
-		var data = {
-			name: self.name,
-			email: self.email
-		};
-		console.log(data);
-
-		$http.put("localhost:3000/#/applicants/{$scope.applicant.id}", data)
+	self.update = function (data, id) {
+		$http.put(self.path + '/' + id, data)
 		  .then(function(response) {
-		console.log(response);
-
 		    self.resultPut = response;
 		    $location.path('/applicants');
 		});
   };
 
-  self.delete = function (applicantId) {
-		$http.delete(self.path + '/' + applicantId)
+  self.delete = function (id) {
+		$http.delete(self.path + '/' + id)
 			.then(function() {
 		    self.show();
 		});
   };
 }]);
 
-autopairControllers.controller('TestController', [function() {
+autopairControllers.controller('TestController', ['$http', '$location', function($http, $location) {
+  var self = this;
+  self.path = 'http://localhost:3000/tests';
 
+  $http.get(self.path)
+	  .then( function (response) {
+	    self.tests = response.data.tests;
+	});
+
+	self.show = function () {
+		$http.get(self.path)
+		  .then(function (response) {
+		    self.tests = response.data.tests;
+		});
+	};
+
+	self.create = function () {
+		var data = {
+			name: self.description,
+			email: self.pass_score
+		};
+	  $http.post(self.path, data)
+	  	.then(function() {
+		    self.show();
+		    $location.path('/tests');
+		});
+  };
+
+	self.update = function (data, id) {
+		$http.put(self.path + '/' + id, data)
+		  .then(function(response) {
+		    self.resultPut = response;
+		    $location.path('/tests');
+		});
+  };
+
+  self.delete = function (id) {
+		$http.delete(self.path + '/' + id)
+			.then(function() {
+		    self.show();
+		});
+  };
 }]);
 
 autopairControllers.controller('QuestionController', [ function() {
 
 }]);
-
-
-
-
-
-
-
-
-
 
 
 

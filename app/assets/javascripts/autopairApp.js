@@ -1,4 +1,4 @@
-var autopairApp = angular.module('autopairApp', ['ngRoute', 'templates', 'ngResource', 'autopairControllers']);
+var autopairApp = angular.module('autopairApp', ['ngRoute', 'templates', 'ngResource', 'xeditable', 'autopairControllers']);
 
 autopairApp.config(['$routeProvider',
   function($routeProvider) {
@@ -23,7 +23,7 @@ autopairApp.config(['$routeProvider',
         controllerAs: 'appCtrl'
       })
       .when('/tests', {
-        templateUrl: 'viewTest.html',
+        templateUrl: 'tests/viewTests.html',
         controller: 'TestController'
       })
       .when('/tests/new', {
