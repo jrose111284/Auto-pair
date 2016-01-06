@@ -8,17 +8,18 @@
 </head>
 <body>
 <header>
-	<nav class="navbar navbar-default" role="navigation" bs-navbar>
+	<nav class="navbar navbar-default" role="navigation" bs-navbar >
 		<div class="navbar-header">
 			<a class="navbar-brand" href="#">Ronin</a>
 		</div>
-		<ul class="nav navbar-nav">
+		<ul ng-show="checked" class="nav navbar-nav">
 			<li data-match-route="/applicants"><a href="#applicants">Applicants</a></li>
 			<li data-match-route="/tests"><a href="#tests">Tests</a></li>
 			<li data-match-route="/questions"><a href="#questions">Questions</a></li>
 		</ul>
-		<div class="login">
-			<a class="navbar-brand" href="#applicants">Login</a>
+
+		<div class="navbar-brand login">
+			<input type="checkbox" ng-model="checked" aria-label="Toggle ngShow"> Admin
 		</div>
 	</nav>
 </header>

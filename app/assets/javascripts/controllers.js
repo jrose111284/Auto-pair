@@ -152,4 +152,8 @@ autopairControllers.controller('QuestionController', ['$http', '$location', func
   self.try = function () {
   	self.result = "Well done!";
   };
+
+ 	self.submit = function () {
+		$location.path('/final');
+ 	};
 }]);

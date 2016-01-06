@@ -8,8 +8,10 @@ autopairApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'index.html',
-        controller: 'IndexController'
+        templateUrl: 'index.html'
+      })
+      .when('/final', {
+        templateUrl: 'final.html'
       })
       .when('/applicants', {
         templateUrl: 'applicants/viewApplicants.html',
