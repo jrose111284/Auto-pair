@@ -16,6 +16,236 @@
  @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
  @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 
+nav {
+  display: block;
+  position: fixed;
+  width: 100%;
+  padding: 0.75rem 0;
+  height: 50px;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid #ddd;
+}
+
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.button {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "futura-pt", Futura, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5rem;
+  padding: 2rem 2.5rem;
+  min-width: 5em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:focus,
+.button:hover, button:focus {
+  background: rgba(255, 255, 255, 0.2);
+  outline: 0;
+}
+
+.button--horizontal {
+  color: #ffffff;
+  border-color: #ffffff;
+
+}
+
+.button--horizontal:hover {
+  background: rgba(255, 255, 255, 0.2);
+  outline: 0;
+}
+
+p.lead {
+  text-align: center;
+}
+
+.cover-heading {
+    font-family: "futura-pt", Futura, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-size: 63px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.lead {
+    font-size: 18px;
+    font-style: normal;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+
+table, td, th, tr  {
+
+  color: #000;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #fff;
+
+}
+body {
+
+
+
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  background: url(http://assets.makersacademy.com/images//backgrounds/B5.jpg) no-repeat center center fixed;
+  background-color: #00333F;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+
+.site-wrapper2 {
+
+  background-color: #CCCCCC;
+
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+
+.inner {
+  padding: 20px;
+}
+
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 20px 20px;
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 750px;
+  }
+}
 
  nav {
  	padding-left: 45px;
@@ -26,6 +256,10 @@
  	position: fixed;
  	top: 0px;
  }
+
+.login {
+  right: 0;
+}
 
  .credits {
  	position: absolute;
@@ -59,3 +293,4 @@
  	-moz-box-shadow: 10px 0px 32px -9px rgba(0,0,0,0.52);
  	box-shadow: 10px 0px 32px -9px rgba(0,0,0,0.52);
  }
+

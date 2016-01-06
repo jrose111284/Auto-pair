@@ -1,0 +1,41 @@
+<section class='add-question'>
+  <div class="container">
+    <h1>Please answer the question.</h1>
+      <h2>{{ questionCtrl.questions[0].question_text }}</h2>
+      <form ng-submit="questionCtrl.submit()">
+        <div class="form-group">
+          <textarea type="text"
+                    class="form-control"
+                    placeholder="Enter an answer here"
+                    ng-model="questionCtrl.answer">
+          </textarea>
+        </div>
+        <div>
+          <textarea readonly type="text"
+                    class="form-control"
+                    placeholder="Result"
+                    ng-model="questionCtrl.result">
+          </textarea>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <a ng-click="questionCtrl.try()"
+               class="btn btn-small btn-primary">
+              Try it
+            </a>
+              <a ng-click="questionCtrl.cancel()"
+                 data-match-route="/questions"
+                 href="#questions"
+                 class="btn btn-small">Cancel</a>
+              <input type="submit"
+                     id="submit"
+                     data-match-route="/questions"
+                     href="#questions"
+                     class="btn btn-small btn-primary">
+
+
+          </div>
+        </div>
+    </form>
+  </div>
+</section>
