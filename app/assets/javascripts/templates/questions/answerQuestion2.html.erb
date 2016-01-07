@@ -7,7 +7,7 @@
       <div class="form-group">
         <label for="question_text">Instructions:</label>
         <br>
-        <p>{{ questionCtrl.questions[0].question_text }}</p>
+        <p>{{ questionCtrl.questions[1].question_text }}</p>
       </div>
       <div class="form-group">
         <label for="question_text">Your solution:</label>
@@ -27,10 +27,10 @@
     <a ng-href="/#/" class="btn btn-default">Back</a>
     <div class="button-group pull-right">
       <div class="button-submit">
-        <button class="btn btn-primary" ng-click="questionCtrl.submit1()" ng-disabled="!questionForm.$valid">Submit</button>
+        <button class="btn btn-primary" ng-click="questionCtrl.submit2()" ng-disabled="!questionForm.$valid">Submit</button>
       </div>
       <div class="button-try">
-        <button class="btn btn-primary" ng-click="questionCtrl.try()">Try it</button>
+        <button class="btn btn-primary" ng-click="questionCtrl.try1()">Try it</button>
       </div>
     </div>
   </div>

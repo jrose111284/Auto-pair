@@ -39,12 +39,10 @@ autopairApp.config(['$routeProvider',
       .when('/tests/new', {
         templateUrl: 'tests/addTest.html',
         controller: 'TestController',
-        controllerAs: 'testCtrl',
-        controller: 'QuestionController',
-        controllerAs: 'questionCtrl'
+        controllerAs: 'testCtrl'
       })
       .when('/questions', {
-        templateUrl: 'questions/viewQuestion.html',
+        templateUrl: 'questions/viewQuestions.html',
         controller: 'QuestionController',
         controllerAs: 'questionCtrl'
       })
@@ -53,8 +51,18 @@ autopairApp.config(['$routeProvider',
         controller: 'QuestionController',
         controllerAs: 'questionCtrl'
       })
-      .when('/questions/:id', {
+      .when('/questions/1', {
         templateUrl: 'questions/answerQuestion.html',
+        controller: 'QuestionController',
+        controllerAs: 'questionCtrl'
+      })
+      .when('/questions/2', {
+        templateUrl: 'questions/answerQuestion2.html',
+        controller: 'QuestionController',
+        controllerAs: 'questionCtrl'
+      })
+      .when('/questions/3', {
+        templateUrl: 'questions/answerQuestion3.html',
         controller: 'QuestionController',
         controllerAs: 'questionCtrl'
       })
