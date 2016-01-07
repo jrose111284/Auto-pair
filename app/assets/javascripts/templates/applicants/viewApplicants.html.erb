@@ -6,9 +6,7 @@
     <div class="pull-left button-add">
       <a ng-href="/#/applicants/new" class="btn btn-primary">Add Applicant</a>
     </div><br>
-
     <table class="table table-striped">
-
       <thead>
         <tr>
           <th>ID</th>
@@ -19,46 +17,45 @@
         </tr>
       </thead>
       <tbody>
-          <tr ng-repeat="applicant in appCtrl.applicants">
-            <td>{{ applicant.id }}</td>
-            <td>
-              <span editable-text="applicant.name"
-                    e-name="name"
-                    e-form="rowform"
-                    e-required>
-                {{ applicant.name || 'empty' }}
-              </span>
-            </td>
-            <td>
-              <span editable-text="applicant.email"
-                    e-name="email"
-                    e-form="rowform"
-                    e-required>
-                {{ applicant.email || 'empty' }}
-              </span>
-            </td>
-            <td>{{ applicant.test_id }}</td>
-            <td>{{ applicant.score }}</td>
-            <td style="white-space: nowrap">
-              <form editable-form name="rowform"
-                    onaftersave="appCtrl.update($data, applicant.id)"
-                    ng-show="rowform.$visible"
-                    class="form-buttons form-inline"
-                    shown="inserted == applicant">
-                <button type="submit" class="btn btn-primary">
-                  Save
-                </button>
-                <button type="button" ng-click="rowform.$cancel()" class="btn btn-default">
-                  Cancel
-                </button>
-              </form>
-              <div class="buttons" ng-show="!rowform.$visible">
-                <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
-                <button class="btn btn-danger" ng-click="appCtrl.delete(applicant.id)">Delete</button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-    </table>
-  </div>
-
+        <tr ng-repeat="applicant in appCtrl.applicants">
+          <td>{{ applicant.id }}</td>
+          <td>
+            <span editable-text="applicant.name"
+            e-name="name"
+            e-form="rowform"
+            e-required>
+            {{ applicant.name || 'empty' }}
+          </span>
+        </td>
+        <td>
+          <span editable-text="applicant.email"
+          e-name="email"
+          e-form="rowform"
+          e-required>
+          {{ applicant.email || 'empty' }}
+        </span>
+      </td>
+      <td>{{ applicant.test_id }}</td>
+      <td>{{ applicant.score }}</td>
+      <td style="white-space: nowrap">
+        <form editable-form name="rowform"
+        onaftersave="appCtrl.update($data, applicant.id)"
+        ng-show="rowform.$visible"
+        class="form-buttons form-inline"
+        shown="inserted == applicant">
+        <button type="submit" class="btn btn-primary">
+          Save
+        </button>
+        <button type="button" ng-click="rowform.$cancel()" class="btn btn-default">
+          Cancel
+        </button>
+      </form>
+      <div class="buttons" ng-show="!rowform.$visible">
+        <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
+        <button class="btn btn-danger" ng-click="appCtrl.delete(applicant.id)">Delete</button>
+      </div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>

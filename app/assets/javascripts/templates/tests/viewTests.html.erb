@@ -1,66 +1,57 @@
-<header ng-include="'navbar.html'">
-</header>
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <div class="page-header">
+    <div class="page-header intro">
       <h2>Tests</h2>
     </div>
-
-
-      <div class='results'>
-        <button data-match-route="/tests/new">
-          <a href="#tests/new">Create test</a>
+    <div class="pull-left button-add">
+      <a ng-href="/#/tests/new" class="btn btn-primary">Add Test</a>
+    </div><br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Pass Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="test in testCtrl.tests">
+          <td>{{ test.id }}</td>
+          <td>
+            <span editable-text="test.description"
+            e-name="description"
+            e-form="rowform"
+            e-required>
+            {{ test.description || 'empty' }}
+          </span>
+        </td>
+        <td>
+          <span editable-text="test.pass_score"
+          e-name="pass_score"
+          e-form="rowform"
+          e-required>
+          {{ test.pass_score || 'empty' }}
+        </span>
+      </td>
+      <td style="white-space: nowrap">
+        <form editable-form name="rowform"
+        onaftersave="testCtrl.update($data, test.id)"
+        ng-show="rowform.$visible"
+        class="form-buttons form-inline"
+        shown="inserted == test">
+        <button type="submit" class="btn btn-primary">
+          Save
         </button>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Description</th>
-            <th>Pass Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="test in testCtrl.tests">
-            <td>{{ test.id }}</td>
-            <td>
-              <span editable-text="test.description"
-                    e-name="description"
-                    e-form="rowform"
-                    e-required>
-                {{ test.description || 'empty' }}
-              </span>
-            </td>
-            <td>
-              <span editable-text="test.pass_score"
-                    e-name="pass_score"
-                    e-form="rowform"
-                    e-required>
-                {{ test.pass_score || 'empty' }}
-              </span>
-            </td>
-            <td style="white-space: nowrap">
-              <form editable-form name="rowform"
-                    onaftersave="testCtrl.update($data, test.id)"
-                    ng-show="rowform.$visible"
-                    class="form-buttons form-inline"
-                    shown="inserted == test">
-                <button type="submit" class="btn btn-primary">
-                  Save
-                </button>
-                <button type="button"
-                        ng-click="rowform.$cancel()"
-                        class="btn btn-default">
-                  Cancel
-                </button>
-              </form>
-              <div class="buttons" ng-show="!rowform.$visible">
-                <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
-                <button class="btn btn-danger" ng-click="testCtrl.delete(test.id)">Delete</button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+        <button type="button" ng-click="rowform.$cancel()" class="btn btn-default">
+          Cancel
+        </button>
+      </form>
+      <div class="buttons" ng-show="!rowform.$visible">
+        <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
+        <button class="btn btn-danger" ng-click="testCtrl.delete(test.id)">Delete</button>
+      </div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>

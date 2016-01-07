@@ -5,11 +5,11 @@
     </div>
     <form role="form" novalidate name="applicantForm">
       <div class="form-group" ng-class="{'has-error': !applicantForm.name.$valid}">
-        <label for="name"></label>
+        <label for="name">Name</label>
         <input type="text" name="name" ng-model="appCtrl.name" class="form-control" required />
       </div>
       <div class="form-group" ng-class="{'has-error': !applicantForm.name.$valid}">
-        <label for="email"></label>
+        <label for="email">Email</label>
         <input type="text" name="email" ng-model="appCtrl.email" class="form-control" required />
       </div>
       <div class="actions">
