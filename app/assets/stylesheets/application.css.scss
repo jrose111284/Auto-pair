@@ -25,10 +25,6 @@ body {
   margin: 0;
 }
 
-a:active,
-a:hover {
-  outline: 0;
-}
 
 h1 {
   font-size: 2em;
@@ -141,10 +137,9 @@ a {
 
 /* Links */
 
-a .button,
-a:focus .button,
-a:hover .button {
 
+.intro {
+  margin-top: 100px;
 }
 
 
