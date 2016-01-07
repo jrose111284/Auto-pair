@@ -25,10 +25,6 @@ body {
   margin: 0;
 }
 
-a:focus {
-  outline: thin dotted;
-}
-
 a:active,
 a:hover {
   outline: 0;
@@ -94,13 +90,13 @@ table {
   text-decoration: none;
 }
 
-.button--horizontal {
+.button-horizontal {
   color: #ffffff;
   border-color: #ffffff;
 
 }
 
-.button--horizontal:hover {
+.button-horizontal:hover {
   background: rgba(255, 255, 255, 0.2);
   outline: 0;
 }
@@ -130,7 +126,8 @@ a {
   transition: color 0.1s linear;
 }
 
-.nav>li>a {
+.nav>li>a,
+.switch {
   font-size: 15px;
   line-height: 20px;
   padding: 20px 12px;
@@ -158,13 +155,12 @@ p.lead {
 
 .cover-heading {
     font-family: "futura-pt", "Futura", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-    font-size: 54px;
+    font-size: 50px;
     color: #ffffff;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 15px;
-    letter-spacing: 3px;
-
+    margin-bottom: 20px;
+    letter-spacing: 4.5px;
 }
 
 .lead {
@@ -173,18 +169,18 @@ p.lead {
   color: #ffffff;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   letter-spacing: 3px;
 }
 
 .invitation {
-  font-size: 32px;
+  font-size: 38px;
   font-style: normal;
   color: #ffffff;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 30px;
-  letter-spacing: 3px;
+  margin-bottom: 75px;
+  letter-spacing: 3.7px;
 }
 
 table, td, th, tr  {
@@ -200,7 +196,6 @@ html,
 body {
   height: 100%;
   background-color: #fff;
-
 }
 
 .full {

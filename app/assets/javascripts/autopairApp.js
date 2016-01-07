@@ -13,6 +13,9 @@ autopairApp.config(['$routeProvider',
       .when('/final', {
         templateUrl: 'final.html'
       })
+      .when('/about', {
+        templateUrl: 'about.html'
+      })
       .when('/applicants', {
         templateUrl: 'applicants/viewApplicants.html',
         controller: 'ApplicantController',
