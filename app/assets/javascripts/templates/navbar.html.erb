@@ -1,0 +1,17 @@
+<!-- header -->
+<nav role="navigation">
+  <div class="navbar-header">
+    <a class="image-brand" href="/#/">
+      <img src="<%= asset_path('ronin.png')%>" alt="Ronin"/>
+    </a>
+  </div>
+  <ul class="nav navbar-nav" ng-hide="checked">
+    <li><a href="#applicants">Applicants</a></li>
+    <li><a href="#tests">Tests</a></li>
+    <li><a href="#questions">Questions</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#about">About</a></li>
+    <li class="switch"><input type="checkbox" ng-model="checked" aria-label="Toggle ngShow"> Admin</li>
+  </ul>
+</nav>

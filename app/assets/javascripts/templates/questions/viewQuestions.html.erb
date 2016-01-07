@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="page-header intro">
+      <h2>Questions</h2>
+    </div>
+    <div class="pull-left button-add">
+      <a ng-href="/#/questions/new" class="btn btn-primary">Add Question</a>
+    </div><br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Question</th>
+          <th>RSpec Test</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="question in questionCtrl.questions">
+          <td>{{ question.id }}</td>
+          <td>
+            <span editable-text="question.question_text"
+                  e-name="name"
+                  e-form="rowform"
+                  e-required>
+            {{ question.question_text || 'empty' }}
+            </span>
+          </td>
+          <td>
+            <span editable-text="question.email"
+                  e-name="email"
+                  e-form="rowform"
+                  e-required>
+              {{ question.rspec_test || 'empty' }}
+            </span>
+          </td>
+          <td style="white-space: nowrap">
+            <form editable-form name="rowform"
+            onaftersave="questionCtrl.update($data, question.id)"
+            ng-show="rowform.$visible"
+            class="form-buttons form-inline"
+            shown="inserted == question">
+              <button type="submit" class="btn btn-primary">
+                Save
+              </button>
+              <button type="button" ng-click="rowform.$cancel()" class="btn btn-default">
+                Cancel
+              </button>
+            </form>
+            <div class="buttons" ng-show="!rowform.$visible">
+              <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
+              <button class="btn btn-danger" ng-click="questionCtrl.delete(question.id)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+

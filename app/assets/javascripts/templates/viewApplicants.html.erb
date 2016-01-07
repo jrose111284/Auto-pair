@@ -1,0 +1,47 @@
+<section class='applicant'>
+	<h1>Applicants</h1>
+
+	<div class='results'>
+		<button class="btn btn-small btn-primary" data-match-route="/applicants/new">
+			<a href="#applicants/new">Create Applicant</a>
+		</button>
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Test ID</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="applicant in appCtrl.applicants">
+						<td>{{ applicant.name }}</td>
+						<td>{{ applicant.email }}</td>
+						<td>{{ applicant.test_id }}</td>
+						<td>{{ applicant.score }}</td>
+						<td>
+							<a ng-click="appCtrl.update(applicant.id)"
+								 data-match-route="/applicants/{{applicant.id}}"
+								 href="#applicants/{{applicant.id}}"
+								 class="btn btn-small btn-primary">
+								Edit
+							</a>
+						</td>
+						<td>
+							<a ng-click="appCtrl.delete(applicant.id)"
+								 data-match-route="/applicants}}"
+								 href="#applicants"
+								 class="btn btn-small btn-danger">
+								Delete
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+
+

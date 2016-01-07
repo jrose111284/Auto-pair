@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'active_model_serializers'
+gem 'sprockets', '2.12.3'
+gem 'angular-rails-templates'
+
 gem 'bower-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -32,6 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :test do
   gem 'rspec-rails'
+  gem 'shoulda'
 end
 
 group :development, :test do

@@ -9,3 +9,10 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( autopairApp.js )
+Rails.application.config.assets.precompile += %w( controllers.js )
+Rails.application.config.assets.precompile += %w( angular/angular.js )
+Rails.application.config.assets.precompile += %w( angular-route/angular-route.js )
+Rails.application.config.assets.precompile += %w( jquery/dist/jquery.js)
+Rails.application.config.assets.precompile += %w( angular-resource/angular-resource.js )
+Rails.application.config.assets.precompile += %w( stylesheets/bootstrap.css )
