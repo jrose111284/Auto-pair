@@ -68,14 +68,17 @@ autopairControllers.controller('TestController', ['$http', '$location', function
 	};
 
 	self.create = function () {
+		self.show();
+		$location.path('/tests');
+
 		var data = {
 			description: self.description,
 			pass_score: self.pass_score
 		};
 	  $http.post(self.path, data)
 	  	.then(function() {
-		    self.show();
-		    $location.path('/tests');
+
+
 		});
   };
 
@@ -100,6 +103,7 @@ autopairControllers.controller('QuestionController', ['$http', '$location', func
 	var self = this;
   self.path = 'http://localhost:3000/questions';
   self.result = '';
+  self.count = 0;
 
   $http.get(self.path)
 	  .then( function (response) {
@@ -124,7 +128,7 @@ autopairControllers.controller('QuestionController', ['$http', '$location', func
 
 	self.create = function () {
 		var data = {
-			questions_text: self.questions_text,
+			question_text: self.question_text,
 			rspec_test: self.rspec_test
 		};
 	  $http.post(self.path, data)
@@ -150,6 +154,37 @@ autopairControllers.controller('QuestionController', ['$http', '$location', func
   };
 
   self.try = function () {
-  	self.result = "Well done!";
+  	self.count += 1;
+  	if (self.count < 3) {
+  		self.result = "Try again!";
+  	} else {
+  		self.result = "Well done!";
+  	}
+  };
+
+  self.try1 = function () {
+    self.result = "Well done!";
+  };
+
+  self.try2 = function () {
+    self.count += 1;
+    if (self.count < 2) {
+      self.result = "Try again!";
+    } else {
+      self.result = "Well done!";
+    }
+  };
+
+
+ 	self.submit = function () {
+		$location.path('/final');
+ 	};
+
+  self.submit1 = function () {
+    $location.path('/questions/2');
+  };
+
+    self.submit2 = function () {
+    $location.path('/questions/3');
   };
 }]);
