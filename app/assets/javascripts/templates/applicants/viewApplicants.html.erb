@@ -1,22 +1,24 @@
-<section class='applicant'>
-  <h1>Applicants</h1>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="page-header intro">
+      <h2>Applicants</h2>
+    </div>
+    <div class="pull-left button-add">
+      <a ng-href="/#/applicants/new" class="btn btn-primary">Add Applicant</a>
+    </div><br>
 
-  <div class='results'>
-    <button data-match-route="/applicants/new">
-      <a href="#applicants/new">Create Applicant</a>
-    </button>
-    <div class="container">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Test ID</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
+    <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Test ID</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
           <tr ng-repeat="applicant in appCtrl.applicants">
             <td>{{ applicant.id }}</td>
             <td>
@@ -57,7 +59,6 @@
             </td>
           </tr>
         </tbody>
-      </table>
-    </div>
+    </table>
   </div>
-</section>
+
