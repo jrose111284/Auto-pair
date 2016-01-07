@@ -99,6 +99,7 @@ autopairControllers.controller('TestController', ['$http', '$location', function
 autopairControllers.controller('QuestionController', ['$http', '$location', function($http, $location) {
 	var self = this;
   self.path = 'http://localhost:3000/questions';
+  self.result = '';
 
   $http.get(self.path)
 	  .then( function (response) {
@@ -146,5 +147,9 @@ autopairControllers.controller('QuestionController', ['$http', '$location', func
 			.then(function() {
 		    self.show();
 		});
+  };
+
+  self.try = function () {
+  	self.result = "Well done!";
   };
 }]);

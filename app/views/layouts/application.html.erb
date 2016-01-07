@@ -17,13 +17,17 @@
 			<li data-match-route="/tests"><a href="#tests">Tests</a></li>
 			<li data-match-route="/questions"><a href="#questions">Questions</a></li>
 		</ul>
+		<div class="login">
+			<a class="navbar-brand" href="#applicants">Login</a>
+		</div>
 	</nav>
 </header>
+<body>
 
-<section class="view-container">
-	<div ng-view class="view-frame animate-view"></div>
-</section>
-<footer>
+<div ng-view ng-class="bgService.getCurrentBg()">
+	<!-- <div  class="view-frame animate-view"></div> -->
+</div>
+<!-- <footer>
 	<div class="img-ronin">
 		<a href="http://ronin.makersacademy.com/"><img src="http://www.studentfunder.com/wp-content/uploads/2014/06/Makers-Academy-Logo.png"></a>
 	</div>
@@ -36,6 +40,6 @@
 			This page uses <a href="https://www.angularjs.org/" target="_blank" class="ronin">Angular JS</a>, <a href="https://www.javascript.com/" target="_blank" class="ronin">Javascript</a>, <a href="http://www.w3.org/html/" target="_blank" class="ronin">HTML</a>, <a href="http://www.w3.org/Style/CSS/Overview.en.html" target="_blank" class="ronin">CSS</a>, <a href="http://www.tescolabs.com/" target="_blank" class="ronin">Tesco Labs API</a> and <a href="http://www.bittylicious.com/" target="_blank" class="ronin">Bittylicious API</a>.
 		</p>
 	</div>
-</footer
+</footer -->
 </body>
 </html>
