@@ -3,8 +3,8 @@
     <header class="page-header intro">
       <h2>Applicant</h2>
     </header>
-    <form role="form" ng-submit="appCtrl.create()" novalidate name="applicantForm">
-      <div class="form-group" ng-class="{'has-error': !applicant.Form.name.$valid}">
+    <form role="form" novalidate name="applicantForm">
+      <div class="form-group" ng-class="{'has-error': !applicantForm.name.$valid}">
         <label for="name"></label>
         <input type="text" name="name" ng-model="appCtrl.name" class="form-control" required />
       </div>
@@ -15,7 +15,7 @@
       <div class="actions">
         <a ng-href="#applicants" class="btn btn-default">Back</a>
         <div class="pull-right">
-          <button class="btn btn-primary" ng-click="submitBook()" ng-disabled="!applicantForm.$valid">Save</button>
+          <button class="btn btn-primary" ng-click="appCtrl.create()" ng-disabled="!applicantForm.$valid">Save</button>
         </div>
       </div>
     </form>
